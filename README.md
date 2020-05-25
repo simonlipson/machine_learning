@@ -3,6 +3,8 @@ Here you will find projects of mine mainly focused on machine learning.
 ## AFL Brownlow Medal Predictor
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
+_Disclaimer:_ I do not endorse betting of any kind. This project is not intended to assist me make lots of money, but more a fun way to see if I could beat the system. Enjoy!
+
 Australian Rules Football is a fantastic game to watch and a brilliant sport to predict. Each year, one player is awarded the Brownlow Medal (the MVP of the season). After each game, the on-field referees decide which player should receive one-vote, two-votes and three-votes. At the end of the season, all of those votes are tallied and the player with the most wins the medal. 
 This of course draws a lot of betting and speculation to determine who will win the medal. And thus, the problem: 
 
@@ -105,7 +107,7 @@ The model was able to predict the actual winner in the top 3 11 out of 17 times,
 
 _snippet of source code_
 ```python
-model = GradientBoostingRegressor(n_estimators=4000, learning_rate= 0.01, max_depth= 4, max_features= 0.3, min_samples_leaf= 17)
+model = GradientBoostingRegressor(n_estimators=3000, learning_rate= 0.01, max_depth= 4, max_features= 0.3, min_samples_leaf= 17)
 results = []
 for i in range(len(X_test)):
     model.fit(X_train[i], y_train[i])
@@ -137,14 +139,14 @@ pyplot.show()
 
 ### Conclusion
 
-Unfortunately, the model didn't perform well enough to secure a high chance of a cashout with the bookies. However, it did show that 11 out of 17 years, the actual winner was within the top 3 of my predictions. As such, the model can be used to inform your own prediction and based on the odds, can even give a chance of winning some money. The following betting guide can minimise the possibility of loss:
+Unfortunately, the model didn't perform well enough to secure a high chance of a cashout with the bookies. However, it did show that in 11 out of the 17 years, the actual winner was within the top 3 of my predictions. As such, the model can be used to complement other available information out there (like the odds) to give a better chance of winning some money. The following betting guide can minimise the possibility of loss (_however I recommend against ACTUALLY using this guide to place real bets_):
 
-1. The favorite has **less than $2** odds and is in your predictions -> only bet on the favorite
-2. The favorite has **more than $2** odds and is in your predictions -> bet same amount on the favorite and next highest prediction
-3. The favorite has **more than $3** odds and is in your predictions -> bet same amount on all three of your predictions
-4. The favorite is not in your predictions -> have fun and don't expect anything
+1. The betting favorite has **less than $2** odds and is in your predictions --> only bet on the favorite
+2. The betting favorite has **more than $2** odds and is in your predictions --> bet same amount on the favorite and next highest prediction
+3. The betting favorite has **more than $3** odds and is in your predictions --> bet same amount on all three of your predictions
+4. The betting favorite is not in your predictions --> have fun and don't expect anything
 
-If the above is applied with the historical betting odds I can find in various old new articles: 
+If the above is applied with the historical betting odds I could find in various old new articles: 
 
 - I win money in 8 years 
 - I lose money in 3 years
