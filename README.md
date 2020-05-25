@@ -93,7 +93,7 @@ gs_cv.best_params_
 
 ### Generating Predictions
 
-With the model selected, tuned and fitted, I generated predictions. The model was predicts the amount of votes each player would receive at the end of the season. The player with the highest amount of votes is the player that theoretically should have won the medal in that season.
+With the model selected, tuned and fitted, I generated predictions. The model predicts the amount of votes each player would receive at the end of the season. The player with the highest amount of votes is the player that theoretically should have won the medal in that season.
 
 I did this for every season from 2003-2019, training the model with data from all other seasons than the one being predicted on:
 - e.g. Predict 2019 winner, train on 2003-2018 data
