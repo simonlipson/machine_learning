@@ -142,7 +142,7 @@ pyplot.show()
 
 ### Conclusion
 
-Unfortunately, the model didn't perform well enough to secure a high chance of a cashout with the bookies. However, it did show that in 11 out of the 17 years, the actual winner was within the top 3 of my predictions. As such, the model can be used to complement other available information out there (like the odds) to give a better chance of winning some money. The following betting guide can minimise the possibility of loss (_however I recommend against ACTUALLY using this guide to place real bets_):
+Unfortunately, the model didn't perform well enough to ensure a cashout with the bookies. However, it did show that in 11 out of the 17 years, the actual winner was within the top 3 of my predictions. As such, the model can be used to complement other available information out there (like the odds) to give a better chance of winning some money. The following betting guide can minimise the possibility of loss (_however I recommend against ACTUALLY using this guide to place real bets_):
 
 1. If the betting favorite has **less than $2** odds and is in your predictions --> only bet on the favorite
 2. If the betting favorite has **more than $2** odds and is in your predictions --> bet same amount on the favorite and next highest prediction
