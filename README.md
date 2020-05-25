@@ -106,7 +106,7 @@ See the table below for the top 3 predicted highest scorers for each season. The
 |  2nd | 2003Black, Simon    | **2004Judd, Chris**   | **2005Cousins, Ben** | 2006Goodwin, Simon | 2007Corey, Joel      | 2008Ablett, Gary  | 2009Boyd, Matthew | 2010Montagna, Leigh | 2011Murphy, Marc  | 2012Dangerfield, Patrick | 2013Swan, Dane        | 2014Selwood, Joel        | **2015Fyfe, Nat**            | 2016Kennedy, Josh P      | 2017Dangerfield, Patrick | 2018Cripps, Patrick      | 2019Prestia, Dion  |
 |  3rd | 2003Cousins, Ben    | 2004Black, Simon  | 2005Hodge, Luke  | 2006Hall, Barry    | 2007Pavlich, Matthew | 2008Mitchell, Sam  | 2009Swan, Dane    | 2010Swan, Dane      | 2011Mitchell, Sam | 2012Ablett, Gary         | 2013Pendlebury, Scott | 2014Gray, Robbie         | 2015Dangerfield, Patrick | 2016Treloar, Adam        | 2017Mitchell, Tom        | **2018Mitchell, Tom**        | 2019Martin, Dustin |
 
-The model was able to predict the actual winner in the top three 11 out of 17 times, of which seven times it got the actual medalist correct. Whilst those numbers might not be significant enough to place secure bets on, it does show some promise.
+The model was able to predict the actual winner in the top three 11 out of 17 times, of which seven times it got the actual medalist correct. Whilst those numbers might not be significant enough to place secure bets on, it does show some promise. The analytical value of these predictions are outlined in the conclusion below. 
 
 _snippet of source code_
 ```python
@@ -126,7 +126,7 @@ top3.columns = years
 
 ### Feature Importance
 
-Lastly, it was interesting to me to understand which on-field statistics seem to have the greatest impact on the predicted score. As it is the umpires and not the fans who decide, there is a subjectivity that arrises from their specific view-point. This may mean that certain stats that the footy (football) fan may deem to be a good indication of Brownlow vote contention, may actually not be. See the below table to see the importance of each feature:
+It was interesting to me to understand which on-field statistics seem to have the greatest impact on the predicted score. As it is the umpires and not the fans who decide, there is a subjectivity that arrises from their specific view-point. This may mean that certain stats that the footy (football) fan may deem to be a good indication of Brownlow vote contention, may actually not be. See the below table to see the importance of each feature:
 
 ![](images/feature_importance.png)
 
