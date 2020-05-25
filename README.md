@@ -1,6 +1,4 @@
-# Data Science Projects
-Here you will find projects of mine mainly focused on machine learning. 
-## AFL Brownlow Medal Predictor
+# AFL Brownlow Medal Predictor
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
 _Disclaimer:_ I do not endorse betting of any kind. This project is not intended to assist me make lots of money, but more a fun way to see if I could beat the system. Enjoy!
