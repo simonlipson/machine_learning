@@ -1,7 +1,7 @@
 # Simon Lipson Projects
 Here you will find projects of mine mainly focused on machine learning.
 ## AFL Brownlow Medal Predictor
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theroar.com.au%2F2014%2F09%2F22%2F2014-afl-brownlow-medal-complete-guide-tips-odds%2F&psig=AOvVaw0gJx4RptYIzuVaKiQHtI_t&ust=1590472603765000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiPy62qzukCFQAAAAAdAAAAABAD)
+![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
 Australian Rules Football is a fantastic game to watch and a brilliant sport to predict. Each year, one player is awarded the Brownlow Medal (the MVP of the season). After each game, the on-field referees decide which player should receive one-vote, two-votes and three-votes. At the end of the season, all of those votes are tallied and the player with the most wins the medal. 
 This of course draws a lot of betting and speculation to determine who will win the medal. And thus, the problem: 
@@ -28,7 +28,7 @@ The project followed the following steps:
 Follow all the above steps in the [notebook](https://github.com/simonlipson/simon_lipson_projects.github.io/blob/master/AFL%20Brownlow%20Predictor.ipynb). 
 See below for the highlights.
 
-###Evaluating Different Regression Algorithms
+### Evaluating Different Regression Algorithms
 
 I used a k-fold cross validation to evaluate the accuracy of several different regression models. This validation optimized for r-squared which is a standard metric for regression algorithm evaluation. See the results below:
 
