@@ -141,8 +141,14 @@ Unfortunately, the model didn't perform well enough to secure a high chance of a
 
 1. The favorite has **less than $2** odds and is in your predictions -> only bet on the favorite
 2. The favorite has **more than $2** odds and is in your predictions -> bet same amount on the favorite and next highest prediction
-3. The favorite has **more than $3** odds and is in your predictions -> bet same amount on all three
+3. The favorite has **more than $3** odds and is in your predictions -> bet same amount on all three of your predictions
 4. The favorite is not in your predictions -> have fun and don't expect anything
 
-If the above is applied with the historical betting odds I can find in various old new articles: I win money in 8 rounds, lose money in 3 rounds and break even in 6 rounds. All in all over 17 years I would have made a slight profit.
+If the above is applied with the historical betting odds I can find in various old new articles: 
+
+- I win money in 8 years 
+- I lose money in 3 years
+- I break even in 6 years
+
+All in all over 17 years I would have made a slight profit.
 
