@@ -1,4 +1,8 @@
-# AFL Brownlow Medal Predictor
+## Project Index
+1. AFL Brownlow Medal Predictor (Regression)
+2. AFL Game Win Loss + Margin Predictor (Classification + Regression)
+
+# AFL Brownlow Medal Predictor (Regression)
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
 _Disclaimer:_ I do not endorse betting of any kind. This project is not intended to assist me (or you) in making lots of money, but more a fun way to see if machine learning could swing the odds in my favour. Enjoy!
@@ -160,3 +164,10 @@ When applying the above system to the historical betting odds [found here](https
 Overall I would have bet $90 over 17 years and received a **profit of $67.05**. 
 
 That yields a **return of 74.5%**.
+
+# AFL Game Win Loss + Margin Predictor (Classification + Regression)
+![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
+
+Using the same Kaggle data set as used in the Brownlow predictor above, I created a classifier to determine which team wins a game and by how much based on the game day stats (not including goals and points obviously). This has no analytical value that can help with sports betting as you can't bet on a match after the game. However it can indicate to coaches and players which parts of the game seem to determine the winner of the game. And it was just a fun way for me to run two models, one classification and one regression.
+
+Please see the [Jupyter Notebook here.](https://github.com/simonlipson/projects/blob/master/AFL_Win_Loss_classifier.ipynb)
