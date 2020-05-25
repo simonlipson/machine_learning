@@ -12,8 +12,10 @@ To help me do so I attained data from the 2003-2019 AFL seasons and trained a mo
 
 [The code can be found here.](https://github.com/simonlipson/simon_lipson_projects.github.io/blob/master/AFL%20Brownlow%20Predictor.ipynb)
 
-[A similar experiment with R can be found here, ](https://github.com/simonlipson/projects/blob/master/AFL%20brownlow%20predictor.R)
+[A similar experiment using R can be found here ](https://github.com/simonlipson/projects/blob/master/AFL%20brownlow%20predictor.R)
 (although it is not related to what is written below).
+
+## The Process
 
 I undertook the following steps as part of this analysis:
 1. Collect the data
