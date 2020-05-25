@@ -101,8 +101,32 @@ See the table below for the top 3 predicted highest scorers for each season. The
 
 The model was able to predict the actual winner in the top 3 11 out of 17 times, of which 6 times it got the actual medalist correct. Whilst those numbers might not be significant enough to place secure betts on, it does show some promise.
 
+```python
+model = GradientBoostingRegressor(n_estimators=4000, learning_rate= 0.01, max_depth= 4, max_features= 0.3, min_samples_leaf= 17)
+results = []
+for i in range(len(X_test)):
+    model.fit(X_train[i], y_train[i])
+    y_pred = model.predict(X_test[i])
+    results.append(pd.DataFrame({'actual': y_test[i],
+                                'prediction': y_pred})
+                  .sort_values('prediction', ascending=False).reset_index())
+                  
+joined_results = pd.concat(results, axis = 1)
+top3 = joined_results['season_player'].head(3)
+top3.columns = years
+```
+
 ### Feature Importance
 
 Lastly it was interesting to me to find which on-field statistics seem to have the greatest impact on the predicted score. As it is the referees and not the fans who decide, there is a subjectivity that arrises from their specific view-point. This may mean that certain stats that the footy (football) fan may deem to be a good indication of Brownlow vote contention, may actually not be. See the below table to see the importance of each feature:
 
 ![](images/feature_importance.png)
+
+```python
+importance = model.feature_importances_
+bars = X_test[0].columns
+y_pos = range(len(bars))
+pyplot.bar(X_test[0].columns, importance)
+pyplot.xticks(y_pos, bars, rotation=90)
+pyplot.show()
+```
