@@ -1,5 +1,5 @@
-# Simon Lipson Projects
-Here you will find projects of mine mainly focused on machine learning.
+# Data Science Projects
+Here you will find projects of mine mainly focused on machine learning. 
 ## AFL Brownlow Medal Predictor
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
@@ -36,6 +36,7 @@ I used a k-fold cross validation to evaluate the accuracy of several different r
 
 The above shows that the Gradient Boosting Regression model (GBM) clearly outperforms the other models. It received an r2 score of ~0.72, where a score of 1.0 is the highest possible score.
 
+_snippet of source code_
 ```python
 models = []
 models.append(('LR',LinearRegression()))
@@ -70,6 +71,7 @@ The GBM has many different parameters that can be changed to further optimize th
  'min_samples_leaf': 17}
  ```
  
+ _snippet of source code_
  ```python
  param_grid = {'learning_rate': [0.1, 0.05, 0.02, 0.01],
 'max_depth': [4, 6],
@@ -101,6 +103,7 @@ See the table below for the top 3 predicted highest scorers for each season. The
 
 The model was able to predict the actual winner in the top 3 11 out of 17 times, of which 6 times it got the actual medalist correct. Whilst those numbers might not be significant enough to place secure betts on, it does show some promise.
 
+_snippet of source code_
 ```python
 model = GradientBoostingRegressor(n_estimators=4000, learning_rate= 0.01, max_depth= 4, max_features= 0.3, min_samples_leaf= 17)
 results = []
@@ -122,6 +125,7 @@ Lastly it was interesting to me to find which on-field statistics seem to have t
 
 ![](images/feature_importance.png)
 
+_snippet of source code_
 ```python
 importance = model.feature_importances_
 bars = X_test[0].columns
@@ -130,3 +134,15 @@ pyplot.bar(X_test[0].columns, importance)
 pyplot.xticks(y_pos, bars, rotation=90)
 pyplot.show()
 ```
+
+### Conclusion
+
+Unfortunately, the model didn't perform well enough to secure a high chance of a cashout with the bookies. However, it did show that 11 out of 17 years, the actual winner was within the top 3 of my predictions. As such, the model can be used to inform your own prediction and based on the odds, can even give a chance of winning some money. The following betting guide can minimise the possibility of loss:
+
+1. The favorite has **less than $2** odds and is in your predictions -> only bet on the favorite
+2. The favorite has **more than $2** odds and is in your predictions -> bet same amount on the favorite and next highest prediction
+3. The favorite has **more than $3** odds and is in your predictions -> bet same amount on all three
+4. The favorite is not in your predictions -> have fun and don't expect anything
+
+If the above is applied with the historical betting odds I can find in various old new articles: I win money in 8 rounds, lose money in 3 rounds and break even in 6 rounds. All in all over 17 years I would have made a slight profit.
+
