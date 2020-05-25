@@ -155,6 +155,6 @@ When applying the above system to the historical betting odds [found here](https
 - I lose money in 3 years (**-$25** for $5 bets)
 - I break even/don't bet in 5 years
 
-Overall I would have bet $90 over 17 years and received a profit of $67.05. 
+Overall I would have bet $90 over 17 years and received a **profit of $67.05**. 
 
 That yields a **return of 74.5%**.
