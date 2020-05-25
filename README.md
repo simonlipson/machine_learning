@@ -157,4 +157,4 @@ When applying the above system to the historical betting odds [found here](https
 
 Overall I would have bet $90 over 17 years and received a profit of $67.05. 
 
-That **yields a return of 74.5%**.
+That yields a **return of 74.5%**.
