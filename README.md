@@ -144,11 +144,11 @@ Unfortunately, the model didn't perform well enough to secure a high chance of a
 3. If the betting favorite has **more than $3** odds and is in your predictions --> bet same amount on all three of your predictions
 4. If the betting favorite is not in your predictions --> have fun and don't expect anything
 
-If the above is applied with the historical betting odds I could find in various old new articles: 
+When applying the above system to historical betting odds I could find in various old new articles: 
 
 - I win money in 8 years 
 - I lose money in 3 years
 - I break even in 6 years
 
-All in all over 17 years I would have made a profit.
+All in all over 17 years I would have made a small profit.
 
