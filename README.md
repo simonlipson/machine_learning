@@ -151,8 +151,9 @@ Unfortunately, the model didn't perform well enough to secure a high chance of a
 
 When applying the above system to historical betting odds [found here](https://www.sportsnews.com.au/afl/2019-brownlow-medal-odds-and-betting-where-the-late-money-is-going/496203), I achieved the following results: 
 
-- I win money in 9 years (+$92.05 for $5 bets)
-- I lose money in 3 years (-$25 for $5 bets)
+- I win money in 9 years **(+$92.05 for $5 bets)**
+- I lose money in 3 years **(-$25 for $5 bets)**
 - I break even in 5 years
 
-Overall I would have bet $90 over 17 years and received a profit of $67.05. That **yields a return of 74.5%**.
+Overall I would have bet $90 over 17 years and received a profit of $67.05. 
+That **yields a return of 74.5%**.
