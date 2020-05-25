@@ -3,7 +3,7 @@
 
 _Disclaimer:_ I do not endorse betting of any kind. This project is not intended to assist me (or you) in making lots of money, but more a fun way to see if machine learning could swing the odds in my favour. Enjoy!
 
-Australian Rules Football is a fantastic game to watch and a brilliant sport to try and predict. Each year, one player is awarded the [Brownlow Medal](https://en.wikipedia.org/wiki/Brownlow_Medal) (the MVP of the season). After each game, the on-field referees decide which player should receive one-vote, two-votes and three-votes. At the end of the season, all of those votes are tallied and the player with the most, wins the medal. 
+Australian Rules Football is a fantastic game to watch and a brilliant sport to try and predict. Each year, one player is awarded the [Brownlow Medal](https://en.wikipedia.org/wiki/Brownlow_Medal) (the MVP of the season). After each game, the on-field umpires decide which player should receive one-vote, two-votes and three-votes. At the end of the season, all of those votes are tallied and the player with the most, wins the medal. 
 This of course draws a lot of betting and speculation to determine who will win the medal. And thus, the problem: 
 
 **Can an algorithm help predict the winner of the Brownlow Medal?**
@@ -126,7 +126,7 @@ top3.columns = years
 
 ### Feature Importance
 
-Lastly, it was interesting to me to understand which on-field statistics seem to have the greatest impact on the predicted score. As it is the referees and not the fans who decide, there is a subjectivity that arrises from their specific view-point. This may mean that certain stats that the footy (football) fan may deem to be a good indication of Brownlow vote contention, may actually not be. See the below table to see the importance of each feature:
+Lastly, it was interesting to me to understand which on-field statistics seem to have the greatest impact on the predicted score. As it is the umpires and not the fans who decide, there is a subjectivity that arrises from their specific view-point. This may mean that certain stats that the footy (football) fan may deem to be a good indication of Brownlow vote contention, may actually not be. See the below table to see the importance of each feature:
 
 ![](images/feature_importance.png)
 
