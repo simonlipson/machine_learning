@@ -105,4 +105,4 @@ The model was able to predict the actual winner in the top 3 11 out of 17 times,
 
 Lastly it was interesting to me to find which on-field statistics seem to have the greatest impact on the predicted score. As it is the referees and not the fans who decide, there is a subjectivity that arrises from their specific view-point. This may mean that certain stats that the footy (football) fan may deem to be a good indication of Brownlow vote contention, may actually not be. See the below table to see the importance of each feature:
 
-
+![](images/feature_importance.png)
