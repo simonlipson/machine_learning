@@ -67,7 +67,7 @@ pyplot.show()
 
 ### Tuning algorithm for hyperparameters
 
-The GBM has many different parameters that can be changed to further optimize the model's performance. To avoid teadiously trying many different combinations of different parameters, I used grid search cross validation to get the best combination for learning_rate, max_depth, min_depth and max_features. This analysis was conducted with n_estimators = 3000. See the results below:
+The GBM has many different parameters that can be changed to further optimize the model's performance. To avoid teadiously trying many different combinations of different parameters, I used grid search cross validation to get the best combination for learning_rate, max_depth, min_depth and max_features. This analysis was conducted with n_estimators = 4000. See the results below:
 
 ```python
 {'learning_rate': 0.01,
@@ -84,7 +84,7 @@ The GBM has many different parameters that can be changed to further optimize th
 'max_features': [1.0, 0.3, 0.1] ## not possible in our example (only 1 fx)
 }
 
-est = GradientBoostingRegressor(n_estimators=3000)
+est = GradientBoostingRegressor(n_estimators=4000)
 
 gs_cv = GridSearchCV(est, param_grid, n_jobs=4).fit(X_train[0], y_train[0])
 
@@ -110,7 +110,7 @@ The model was able to predict the actual winner in the top three 11 out of 17 ti
 
 _snippet of source code_
 ```python
-model = GradientBoostingRegressor(n_estimators=3000, learning_rate= 0.01, max_depth= 4, max_features= 0.3, min_samples_leaf= 17)
+model = GradientBoostingRegressor(n_estimators=4000, learning_rate= 0.01, max_depth= 4, max_features= 0.3, min_samples_leaf= 17)
 results = []
 for i in range(len(X_test)):
     model.fit(X_train[i], y_train[i])
