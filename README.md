@@ -11,7 +11,9 @@ This of course draws a lot of betting and speculation to determine who will win 
 To help me do so I attained data from the 2003-2019 AFL seasons and trained a model to predict the amount of votes each player will receive in each of those seasons. The player that was predicted to have the highest amount of votes should theoretically be the winner of the medal. 
 
 [The code can be found here.](https://github.com/simonlipson/simon_lipson_projects.github.io/blob/master/AFL%20Brownlow%20Predictor.ipynb)
-[A similar experiment with R can be found here](https://github.com/simonlipson/projects/blob/master/AFL%20brownlow%20predictor.R)
+
+[A similar experiment with R can be found here, ](https://github.com/simonlipson/projects/blob/master/AFL%20brownlow%20predictor.R)
+(although it is not related to what is written below).
 
 I undertook the following steps as part of this analysis:
 1. Collect the data
