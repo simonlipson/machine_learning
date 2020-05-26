@@ -87,7 +87,7 @@ The GBM has many different parameters that can be changed to further optimize th
  param_grid = {'learning_rate': [0.1, 0.05, 0.02, 0.01],
 'max_depth': [4, 6],
 'min_samples_leaf': [3, 5, 9, 17],
-'max_features': [1.0, 0.3, 0.1] ## not possible in our example (only 1 fx)
+'max_features': [1.0, 0.3, 0.1]
 }
 
 est = GradientBoostingRegressor(n_estimators=4000)
