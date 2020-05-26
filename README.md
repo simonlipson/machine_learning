@@ -170,6 +170,6 @@ If for those same years you just bet $5 on the favourite, you end up with a retu
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
 
-Using the same Kaggle data set as used in the Brownlow predictor above, I created a classifier to determine which team wins a game and by how much based on the game day stats (not including goals and points obviously). This has no analytical value that can help with sports betting as you can't bet on a match after the game. However it can indicate to coaches and players which parts of the game seem to determine the winner of the game. And it was just a fun way for me to run two models, one classification and one regression.
+Using the same Kaggle data set as used in the [Brownlow predictor](#afl-brownlow-medal-predictor-regression) above, I created a classifier to determine which team wins a game and by how much based on the game day stats (not including goals and points obviously). This has no analytical value that can help with sports betting as you can't bet on a match after the game. However it can indicate to coaches and players which parts of the game seem to determine the winner of the game. And it was just a fun way for me to run two models, one classification and one regression.
 
 Please see the [Jupyter Notebook here.](https://github.com/simonlipson/projects/blob/master/AFL_Win_Loss_classifier.ipynb)
