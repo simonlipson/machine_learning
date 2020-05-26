@@ -45,7 +45,7 @@ I used a k-fold cross validation to evaluate the accuracy of several different r
 
 ![alt text](images/cv_graph.png)
 
-The above shows that the Gradient Boosting Regression model (GBM) clearly outperforms the other models. It received an r2 score of ~0.72, where a score of 1.0 is the highest possible score.
+The above shows that the Gradient Boosting Regression model (GBM) clearly outperforms the other models. It received a r2 score of ~0.72, where a score of 1.0 is the highest possible score. This is why I chose the GBM model for my analysis.
 
 _snippet of source code_
 ```python
@@ -164,6 +164,8 @@ When applying the above system to the historical betting odds [found here](https
 Overall I would have bet $90 over 17 years and received a **profit of $67.05**. 
 
 That yields a **return of 74.5%**.
+
+If for those same years you just bet $5 on the favourite, you end up with a return of 41.2% over 17 years. So using the odds and the model predictions increases your yield by more than 30%
 
 # AFL Game Win Loss + Margin Predictor (Classification + Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
