@@ -1,5 +1,5 @@
 ## Project Index
-1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-(regression))
+1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
 2. [AFL Game Win Loss + Margin Predictor (Classification + Regression)](#AFL-Game-win-Loss-+-Margin-Predictor-(Classification-+-Regression))
 
 # AFL Brownlow Medal Predictor (Regression)
