@@ -161,9 +161,9 @@ When applying the above system to the historical betting odds [found here](https
 - I lose money in 3 years (**-$25** for $5 bets)
 - I break even/don't bet in 5 years
 
-Overall I would have bet $90 over 17 years and received a **profit of $67.05**. 
+Overall I would have bet $90 over 17 years and received a **profit of $67.05**.
 
-That yields a **return of 74.5%**.
+That yields a **return of 74.5%**. Further optimization of the betting system could yield even higher returns.
 
 If for those same years you just bet $5 on the favourite, you end up with a return of 41.2% over 17 years. So using the odds and the model predictions increases your yield by more than 30%
 
