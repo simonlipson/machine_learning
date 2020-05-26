@@ -1,6 +1,6 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
-2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#AFL-Game-win-Loss-and-Margin-Predictor-Classification-and-Regression)
+2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
 # AFL Brownlow Medal Predictor (Regression)
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
