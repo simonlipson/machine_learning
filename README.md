@@ -43,7 +43,7 @@ Below are the highlights with some code snippets.
 
 I used a k-fold cross validation to evaluate the accuracy of several different regression models. This validation optimized for [r-squared](https://en.wikipedia.org/wiki/Coefficient_of_determination) which is a standard metric for regression algorithm evaluation. See the results below:
 
-![alt text](images/cv_graph.png)
+![alt text](images/algo_r2.png)
 
 The above shows that the Gradient Boosting Regression model (GBM) clearly outperforms the other models. It received a r2 score of ~0.72, where a score of 1.0 is the highest possible score. This is why I chose the GBM model for my analysis.
 
