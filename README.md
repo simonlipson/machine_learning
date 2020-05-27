@@ -167,6 +167,14 @@ That yields a **return of 74.5%**. Further optimization of the betting system co
 
 If for those same years you just bet $5 on the favourite, you end up with a return of 41.2% over 17 years. So using the odds and the model predictions increases your yield by more than 30%
 
+### Further Research
+
+The achieved results do show some promise, however there is definitely still room to improve. I believe that the main downside to this experiment is that the model didn't put enough emphasis on trying to predict the highest polling player, but rather predict the amount of votes for ALL players. Whilst that is still a decent approach, it wasn't able to predict the winner enough times. The next phase of this experiment will try and emphasise who the winner of the medal would be and not to try and predict how many votes everyone received. 
+
+This could involve making several changes in the feature engineering phase. For example, my model looks at data aggregated per season. As such, it doesn't take into account who was the best player per game. Therefore there are many game-day relevant insights that might be missed by the algorithm. For example, if it was a low scoring game, the highest goal kicker wouldn't have have kicked many goals but still might be the best player. That could be true about almost all of the used data points. 
+
+There may also be the ability to engineer features that try and capture player momentum to see if they are on a hot streak. This could help capture a part of the player psychology as well as the umpire psychology. If the "hot" player is constantly being praised in the media, it can have a big impact on their performance and also on how much the umpire is watching them. There are many other features that could be relevant when looking at it on a per-game basis as opposed to a per-season basis. This could be a good avenue for improvement.
+
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
 
