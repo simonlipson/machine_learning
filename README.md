@@ -1,5 +1,6 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
+2. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
 2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
 # AFL Brownlow Medal Predictor (Regression)
@@ -174,6 +175,109 @@ The achieved results do show some promise, however there is definitely still roo
 This could involve making several changes in the feature engineering phase. For example, my model looks at data aggregated per season. As such, it doesn't take into account who was the best player per game. Therefore there are many game-day relevant insights that might be missed by the algorithm. For example, if it was a low scoring game, the highest goal kicker wouldn't have have kicked many goals but still might be the best player. That could be true about almost all of the used data points. 
 
 There may also be the ability to engineer features that try and capture player momentum to see if they are on a hot streak. This could help capture a part of the player psychology as well as the umpire psychology. If the "hot" player is constantly being praised in the media, it can have a big impact on their performance and also on how much the umpire is watching them. There are many other features that could be relevant when looking at it on a per-game basis as opposed to a per-season basis. This could be a good avenue for improvement.
+
+# Visualizing personalities of sitcom characters (NLP)
+
+![](https://images.justwatch.com/backdrop/8612355/s1440/friends)
+
+Have you ever done one of those Buzzfeed "Which character are you?" games? Or has anyone ever told you "You're such a Ross". I wanted to unpack that a little bit and try and see if there was a way of indentifying what it _means_ to "be a Ross". And thus the problem:
+
+**Can an algorithm recognise personality characteristic from screenplays?**
+
+I'm sure there are many clever and complex ways of going about building my own model that could do this for me. However I don't believe in reinventing the wheel. Instead I decided to use [IBM's Watson](https://www.ibm.com/watson). This is an AI platform that offers many different services, one of which is called Personality Insights and is accessible via [API](https://cloud.ibm.com/apidocs/personality-insights?code=python). 
+
+### The Process
+
+1. Get the data
+2. Preprocess that data 
+3. Call Watson API for Personality Insights
+4. Visualize those insights
+5. BONUS: Rick or Morty predictor Algorithm
+
+The whole process can be followed in the [Jupyter Notebook](https://github.com/simonlipson/projects/blob/master/Friends%20NLP.ipynb). To see the visualizations in a nice Jupyter Widget you should open the Notebook in Jupyter yourself. Below will be some of the highlights.
+
+### For soup in soups
+
+The first sitcom I wanted to tackle was Friends. I found a [site](https://fangj.github.io/friends/) that contained all of the transcripts. I built a scraper to get all the scripts and then put them into a pandas dataframe. This was relatively easy as the URLs for each script differed only by the number of the episode. Putting them into the dataframe was also relatively simple as I could split the text based on colon ":" to have character and dialogue columns.
+
+_code snippet_
+
+```python
+#Crawl all friends scripts for first 9 seasons
+pages = []
+for i in range(101,923):
+    page = requests.get('https://fangj.github.io/friends/season/0{}.html'.format(i))
+    pages.append(page)
+    
+#Parse all scraped htmls into beautiful soups
+soups = []
+for page in pages:
+    if page.status_code == 200:
+        soup = BeautifulSoup(page.content, 'html.parser')
+        soups.append(soup)
+        
+#Scrape all the lines from the scripts and put them into data frames
+frames = []
+for soup in soups:
+    lines = []
+    for i in range(2,len(soup.find_all('p'))):
+        lines.append(soup.find_all('p')[i].get_text())
+    df = pd.DataFrame({'line':lines})
+    frames.append(df)
+    
+#Split the data frame so the each character is in the first column
+df = df.line.str.split(":", expand = True)
+```
+
+### Elementary my dear ...
+
+Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Morty, it was time to generate personality insights for each of the main characters. This involved sending blocks of text for each character to Watson via API. The output is a json with all the personality characteristics. See below for example of the output:
+
+```json
+{
+  "word_count": 48683,
+  "processed_language": "en",
+  "personality": [
+    {
+      "trait_id": "big5_openness",
+      "name": "Openness",
+      "category": "personality",
+      "percentile": 0.7205221146457056,
+      "raw_score": 0.7673095726575155,
+      "significant": true
+      }
+      ]
+   }
+```
+
+The `personality.name` and `personality.percentile` fields are what I use to visualize the personalities. See next section for visualizations.
+
+_code snippet_
+
+```python
+#Instantiate IBM Watson Personality Insights service
+
+authenticator = IAMAuthenticator('<my_api_key>')
+service = PersonalityInsightsV3(authenticator = authenticator, version='2017-10-13')
+service.set_service_url('<my_service_url>')
+
+friends = ['Chandler', 'Joey', 'Monica', 'Phoebe', 'Rachel', 'Ross']
+
+for friend in friends:
+    globals()[friend + '_profile'] = service.profile(
+                                                    globals()[friend],
+                                                    'application/json',
+                                                    consumption_preferences=True,
+                                                    raw_scores=True
+                                                    ).get_result()
+```
+### Visualizing the personalities with matplotlib
+
+For each of the four shows I created functions that plot each character of that show onto a bar chart which plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
+
+Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
+
+
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
