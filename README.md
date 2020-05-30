@@ -277,6 +277,42 @@ For each of the four shows I created functions that plot each character of that 
 
 Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
 
+_code snippet for Rick and Morty visualiztion_
+```python
+def rnm_create_personality_plot(level):
+    labels = [big5['name'] for big5 in rick_profile[level]]
+    rick_p = [big5['percentile'] for big5 in rick_profile[level]]
+    morty_p = [big5['percentile'] for big5 in morty_profile[level]]
+    
+
+    barWidth = 0.15  # the width of the bars
+
+    # Set position of bar on X axis
+    r1 = np.arange(len(rick_p))
+    r2 = [x + barWidth for x in r1]
+    r3 = [x + barWidth for x in r2]
+    r4 = [x + barWidth for x in r3]
+
+    # Make the plot
+    plt.bar(r1, rick_p, color='#66cc00', width=barWidth, edgecolor='white', label='rick')
+    plt.bar(r2, morty_p, color='#0099cc', width=barWidth, edgecolor='white', label='morty')
+
+
+
+    # Add xticks on the middle of the group bars
+    plt.xlabel(level, fontweight = 'bold')
+    plt.xticks([r + barWidth for r in range(len(rick_p))], labels)
+    plt.rcParams["figure.figsize"] = (30,8)
+    matplotlib.rcParams.update({'font.size': 18})
+    plt.ylabel('Percentile', fontweight = 'bold')
+
+    # Create legend & Show graphic
+    plt.legend()
+    plt.show()
+    
+rnm_create_personality_plot('personality')
+```
+
 ### Big 5 Analysis Per Show
 
 #### Friends
