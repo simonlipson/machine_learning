@@ -246,7 +246,7 @@ Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Mor
       
       {
       ]
-   {
+   }
 ```
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
