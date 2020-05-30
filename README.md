@@ -178,6 +178,8 @@ There may also be the ability to engineer features that try and capture player m
 
 # Visualizing personalities of sitcom characters (NLP)
 
+![](https://images.justwatch.com/backdrop/8612355/s1440/friends)
+
 Have you ever done one of those Buzzfeed "Which character are you?" games? Or has anyone ever told you "You're such a Ross". I wanted to unpack that a little bit and try and see if there was a way of indentifying what it _means_ to "be a Ross". And thus the problem:
 
 **Can an algorithm recognise personality characteristic from screenplays?**
@@ -194,7 +196,7 @@ I'm sure there are many clever and complex ways of going about building my own m
 
 The whole process can be followed in the [Jupyter Notebook](https://github.com/simonlipson/projects/blob/master/Friends%20NLP.ipynb). To see the visualizations in a nice Jupyter Widget you should open the Notebook in Jupyter yourself. Below will be some of the highlights.
 
-### Soup in soups
+### For soup in soups
 
 The first sitcom I wanted to tackle was Friends. I found a [site](https://fangj.github.io/friends/) that contained all of the transcripts. I built a scraper to get all the scripts and then put them into a pandas dataframe. This was relatively easy as the URLs for each script differed only by the number of the episode. Putting them into the dataframe was also relatively simple as I could split the text based on colon ":" to have character and dialogue columns.
 
@@ -247,16 +249,17 @@ Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Mor
       ]
    }
 ```
-By using the `personality.name` and `personality.percentile` fields I could create bar plots to visualize Watson's output.
+
+The `personality.name` and `personality.percentile` fields are what I use to visualize the personalities. See next section for visualizations.
 
 _code snippet_
 
 ```python
 #Instantiate IBM Watson Personality Insights service
+
 authenticator = IAMAuthenticator('<my_api_key>')
 service = PersonalityInsightsV3(authenticator = authenticator, version='2017-10-13')
 service.set_service_url('<my_service_url>')
-service
 
 friends = ['Chandler', 'Joey', 'Monica', 'Phoebe', 'Rachel', 'Ross']
 
@@ -268,6 +271,13 @@ for friend in friends:
                                                     raw_scores=True
                                                     ).get_result()
 ```
+### Visualizing the personalities with matplotlib
+
+For each of the four shows I created functions that plot each character of that show onto a bar chart which plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
+
+Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
+
+
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
