@@ -1,6 +1,6 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
-2. [Visualizing personalities of sitcom characters (NLP)](visualizing-personalities-of-sitcom-characters-nlp)
+2. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
 2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
 # AFL Brownlow Medal Predictor (Regression)
@@ -243,8 +243,9 @@ Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Mor
       "percentile": 0.7205221146457056,
       "raw_score": 0.7673095726575155,
       "significant": true
-      ]
+      
       {
+      ]
    {
 ```
 
