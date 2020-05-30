@@ -243,8 +243,7 @@ Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Mor
       "percentile": 0.7205221146457056,
       "raw_score": 0.7673095726575155,
       "significant": true
-      
-      {
+      }
       ]
    }
 ```
