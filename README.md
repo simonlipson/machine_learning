@@ -247,6 +247,27 @@ Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Mor
       ]
    }
 ```
+By using the `personality.name` and `personality.percentile` fields I could create bar plots to visualize Watson's output.
+
+_code snippet_
+
+```python
+#Instantiate IBM Watson Personality Insights service
+authenticator = IAMAuthenticator('<my_api_key>')
+service = PersonalityInsightsV3(authenticator = authenticator, version='2017-10-13')
+service.set_service_url('<my_service_url>')
+service
+
+friends = ['Chandler', 'Joey', 'Monica', 'Phoebe', 'Rachel', 'Ross']
+
+for friend in friends:
+    globals()[friend + '_profile'] = service.profile(
+                                                    globals()[friend],
+                                                    'application/json',
+                                                    consumption_preferences=True,
+                                                    raw_scores=True
+                                                    ).get_result()
+```
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
