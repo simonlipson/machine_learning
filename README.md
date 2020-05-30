@@ -1,5 +1,6 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
+2. [Visualizing personalities of sitcom characters (NLP)](Visualizing-personalities-of-sitcom-characters-NLP)
 2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
 # AFL Brownlow Medal Predictor (Regression)
@@ -193,7 +194,7 @@ I'm sure there are many clever and complex ways of going about building my own m
 
 The whole process can be followed in the [Jupyter Notebook](https://github.com/simonlipson/projects/blob/master/Friends%20NLP.ipynb). To see the visualizations in a nice Jupyter Widget you should open the Notebook in Jupyter yourself. Below will be some of the highlights.
 
-### Soup of soups
+### Soup in soups
 
 The first sitcom I wanted to tackle was Friends. I found a [site](https://fangj.github.io/friends/) that contained all of the transcripts. I built a scraper to get all the scripts and then put them into a pandas dataframe. This was relatively easy as the URLs for each script differed only by the number of the episode. Putting them into the dataframe was also relatively simple as I could split the text based on colon ":" to have character and dialogue columns.
 
@@ -225,6 +226,27 @@ for soup in soups:
 #Split the data frame so the each character is in the first column
 df = df.line.str.split(":", expand = True)
 ```
+
+### Elementary my dear ...
+
+Once I had all my data from Friends, Seinfeld, Sex and the City and Rick and Morty, it was time to generate personality insights for each of the main characters. This involved sending blocks of text for each character to Watson via API. The output is a json with all the personality characteristics. See below for example of the output:
+
+```json
+{
+  "word_count": 48683,
+  "processed_language": "en",
+  "personality": [
+    {
+      "trait_id": "big5_openness",
+      "name": "Openness",
+      "category": "personality",
+      "percentile": 0.7205221146457056,
+      "raw_score": 0.7673095726575155,
+      "significant": true,
+      "children": [
+        {
+        {
+        ```
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
