@@ -277,6 +277,10 @@ For each of the four shows I created functions that plot each character of that 
 
 Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
 
+#### Big 5 Analysis Per Show
+
+![](images/friends.png)
+
 
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
