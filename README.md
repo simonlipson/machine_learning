@@ -273,7 +273,7 @@ for friend in friends:
 ```
 ### Visualizing the personalities with matplotlib
 
-For each of the four shows I created functions that plot each character of that show onto a bar chart which plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
+For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
 
 Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
 
@@ -376,9 +376,9 @@ y_pred = model.predict(X_test)
 
 I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. And so by finding the max probability for rick and morty, we get the following:
 
-Rickest Rick: "When I drop the bomb you know, I want you to have somebody, you know? I want you to have the thing. I'm gonna make it like a new Adam and Eve, and you're gonna be Adam."
+**Rickest Rick**: "When I drop the bomb you know, I want you to have somebody, you know? I want you to have the thing. I'm gonna make it like a new Adam and Eve, and you're gonna be Adam."
 
-Mortyest Morty: "Oh, man, Rick. What is this place?"
+**Mortyest Morty**: "Oh, man, Rick. What is this place?"
 
 
 ### Conclusion
