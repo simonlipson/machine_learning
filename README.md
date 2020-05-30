@@ -279,7 +279,7 @@ Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all 
 
 #### Big 5 Analysis Per Show
 
-![](images/friends.png)
+![](images/friends_big5.png)
 
 
 
