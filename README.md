@@ -359,13 +359,15 @@ Whilst I was impressed by Watson's ability to deduce personality insights, I fee
 
 #### Child traits for each of the big 5
 
+![](images/child1.png)
+![](images/child2.png)
+![](images/child3.png)
 
+### Needs for each character
 
 ![](images/rnm_needs.png)
 
-The needs graphs for the other sitcoms can be seen in the notebook.
-
-With this observable variance between the two characters, I wanted to try and train a classifier to see if it could predict who says a specific line. So with the same data I used to generate the personality profiles, I trained a classifier. 
+With this observable variance between the two characters, it seemed that this is something that could lend itself well to prediction. As such I trained a classifier to see if it could predict who says a specific line. So with the same data I used to generate the personality profiles, I trained a classifier. 
 
 #### TF-IDF Token Vectorization
 
@@ -385,7 +387,7 @@ The classification report upon prediction is as follows:
    macro avg       0.69      0.58      0.55       154
 weighted avg       0.68      0.65      0.59       154
 ```
-Overall accuracy of 0.65. Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation and tuning for hyperparameters with gridsearch. 
+Overall accuracy of 0.65. Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation, tuning for hyperparameters with gridsearch and other NLP feature extraction methods like word-embedding and creating rule-based linguistic features. 
 
 _code snippet_
 ```python
@@ -413,7 +415,7 @@ I was curious to see which lines were given the highest probability of being Ric
 
 ### Conclusion
 
-
+Whilst I don't believe that IBM's Watson or my classifier will be able to outperform a human at deciphering personality traits anytime soon, I do believe that it was cool to see that machines could process text in a better than random way. I found it very interesting to be able to connect to a service as cool and futuristic as Watson from my own living room and get results within seconds. When services like these get better with time, there will be many awesome possibilities that can be achieved by the top-of-the-line data scientists and the living-room data scientists. 
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
