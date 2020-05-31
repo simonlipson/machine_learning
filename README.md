@@ -273,7 +273,7 @@ for friend in friends:
 ```
 ### Visualizing the personalities with matplotlib
 
-For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
+For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the children of each of those traits. These are what I focused on for the visualization. 
 
 Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
 
@@ -362,10 +362,6 @@ Whilst I was impressed by Watson's ability to deduce personality insights, I fee
 ![](images/child1.png)
 ![](images/child2.png)
 ![](images/child3.png)
-
-### Needs for each character
-
-![](images/rnm_needs.png)
 
 With this observable variance between the two characters, it seemed that this is something that could lend itself well to prediction. As such I trained a classifier to see if it could predict who says a specific line. So with the same data I used to generate the personality profiles, I trained a classifier. 
 
