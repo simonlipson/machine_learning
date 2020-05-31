@@ -273,7 +273,7 @@ for friend in friends:
 ```
 ### Visualizing the personalities with matplotlib
 
-For each of the four shows I created functions that plot each character of that show onto a bar chart which plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
+For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
 
 Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
 
@@ -326,6 +326,80 @@ rnm_create_personality_plot('personality')
 
 #### Rick and Morty 
 ![](images/rnm_big5.png)
+
+### A few insights
+
+The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. We can see this when we look at aggregated data for each personality trait accross all characters.
+
+IMAGE
+
+As you can see, the standard deviation across all the big 5 traits is quite low. That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
+
+See below the characters with the highest and lowest levels of each trait.
+
+#### Highest
+
+IMAGE
+
+#### Lowest
+
+IMAGE
+
+### Bonus: Rick and Morty further analysis
+
+Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance, especially in Agreeableness and Emotional Range. When I looked further into the needs of each character, there was a much more observable variance between Rick and Morty than for the characters on the other shows.
+
+![](images/rnm_needs.png)
+
+The needs graphs for the other sitcoms can be seen in the notebook.
+
+With this observable variance between the two characters, I wanted to try and train a classifier to see if it could predict who says a specific line. So with the same data I used to generate the personality profiles, I trained a classifier. 
+
+#### TF-IDF Token Vectorization
+
+I extracted features from each line of dialogue using TfidfVectorizer. This creates a matrix of vectors that became the input for my training sets. The names of the characters was the test set.
+
+I used a LogisticRegression classifier.
+
+The classification report upon prediction is as follows:
+
+```
+              precision    recall  f1-score   support
+
+       Morty       0.74      0.22      0.34        63
+        Rick       0.64      0.95      0.76        91
+
+    accuracy                           0.65       154
+   macro avg       0.69      0.58      0.55       154
+weighted avg       0.68      0.65      0.59       154
+```
+Overall accuracy of 0.65. Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation and tuning for hyperparameters with gridsearch. 
+
+_code snippet_
+```python
+y = rick_and_morty_lines['name']
+
+tfv = TfidfVectorizer(ngram_range=(2,4), max_features=2000)
+X = tfv.fit_transform(rick_and_morty_lines['line']).todense()
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+```
+
+#### The Rickest Rick
+
+I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. And so by finding the max probability for rick and morty, we get the following:
+
+**Rickest Rick**: "When I drop the bomb you know, I want you to have somebody, you know? I want you to have the thing. I'm gonna make it like a new Adam and Eve, and you're gonna be Adam."
+
+**Mortyest Morty**: "Oh, man, Rick. What is this place?"
+
+
+### Conclusion
 
 
 
