@@ -345,6 +345,14 @@ See below the characters with the highest and lowest levels of each trait.
 
 ![](images/min.png)
 
+Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City had higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
+
+Rachel is the most agreeable character (and hence probably why she is such a fan favourite) and Rick is the least.
+
+Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
+
+Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted.
+
 ### Bonus: Rick and Morty further analysis
 
 Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance, especially in Agreeableness and Emotional Range. When I looked further into the needs of each character, there was a much more observable variance between Rick and Morty than for the characters on the other shows.
