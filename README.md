@@ -279,7 +279,7 @@ for friend in friends:
 
 For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the children of each of those traits. These are what I focused on for the visualization. 
 
-Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
+Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see screenshots of the plots below.
 
 _code snippet for Rick and Morty visualiztion_
 ```python
@@ -333,11 +333,13 @@ rnm_create_personality_plot('personality')
 
 ### A few insights
 
-The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. We can see this when we look at aggregated data for each personality trait accross all characters.
+The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. Or maybe Watson is less suited to screenplays and better suited to tweets, Yelp reviews or presidential debates. 
+
+Below are some descriptive statistics of the percentiles for the big5 for all of the characters.
 
 ![](images/agg.png)
 
-As you can see, the standard deviation across all the big 5 traits is quite low (except for the Extraversion and Emotional Range that anyway have low averages). That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
+We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness). The emotional range can possibly be explained by the fact that the shows all have less than 30 minute episodes and are all comedies. There isn't enough time or need to develop complex and broad storylines that portray all of the ups and downs of each character that reflect the everyday of everyday people. Rather, we want to see Joey be loveable, Samantha be raunchy, George be paranoid and Rick be cynical. 
 
 See below the characters with the highest and lowest levels of each trait.
 
@@ -359,7 +361,7 @@ Surprisingly, Monica is the most conscientious. And less surprisingly Samantha i
 
 ### Bonus: Rick and Morty further analysis
 
-Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters. There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
+Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the characters in each of the 90s sitcoms are very similar to their co-characters. There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
 
 #### Child traits for each of the big 5
 
@@ -367,15 +369,17 @@ Whilst I was impressed by Watson's ability to deduce personality insights, I fee
 ![](images/child2.png)
 ![](images/child3.png)
 
-With the observable variance between the two characters, it seemed that the difference in character could lend itself well to prediction. As such I trained a classifier to see if it could predict who says a specific line from the show. So with the same data I used to generate the personality profiles, I went about extracting features, training a model and creating predictions. 
+We can see that Rick has much more imagination, self-efficacy, assertiveness and immoderation than Morty. Yet Morty is more cautious, cheerful (no-surprise there), sympathetic, prone to worry and susceptable to stress than Rick. Any viewer of the show would agree with these. Although there are others that Watson got wrong, like Morty having a similar level of intellect to Rick or Rick being more trusting than Morty. Regardless, there is clearly an observable difference between these two characters.
 
-#### TF-IDF Token Vectorization
+As such, it seemed that the difference could lend itself well to prediction. As such I went about training a classifier to see if it could classify a line as being said by Rick or by Morty. So with the same data I used to generate the personality profiles, I went about extracting features, training a model and creating predictions. 
+
+#### TF-IDF Vectorization
 
 I extracted features from each line of dialogue using TfidfVectorizer. This created a matrix of vectors that became the input for my training sets. The names of the characters was the test set.
 
 I used a LogisticRegression classifier and split the data 80/20 for training and testing.
 
-Upon having trained the model and creating predictions, the model was able to achieve the following performance:
+Upon having trained the model and created predictions, the model was able to achieve the following performance:
 
 ```
               precision    recall  f1-score   support
@@ -417,7 +421,7 @@ I was curious to see which lines were given the highest probability of being Ric
 
 ### Conclusion
 
-Whilst I don't believe that IBM's Watson or my classifier will be able to outperform a human at deciphering personality traits anytime soon, I do believe that it was cool to see that machines could process text in a better than random way. I found it very interesting to be able to connect to a service as cool and futuristic as Watson from my own living room and get results within seconds. When services like these get better with time, there will be many awesome possibilities that can be achieved by data scientists with fewer resources than large organizations. I plan to take full advantage of all of these opportunities. 
+Whilst I don't believe that IBM's Watson or my classifier will be able to outperform a human at deciphering personality traits anytime soon, I do believe that it was cool to see that machines could process text in a better than random way. I found it very interesting to be able to connect to a service as cool and futuristic as Watson from my own living room and get results within seconds. When services like these get better with time, there will be many awesome possibilities that can be achieved by data scientists with fewer resources than those working in large organizations. I plan to take full advantage of all of those opportunities. 
 
 ---
 
