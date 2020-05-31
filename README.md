@@ -196,7 +196,7 @@ I'm sure there are many clever and complex ways of going about building my own m
 2. Preprocess that data 
 3. Call Watson API for Personality Insights
 4. Visualize those insights
-5. BONUS: Rick or Morty predictor Algorithm
+5. BONUS: predicting the Rickest Rick and Mortyest Morty
 
 The whole process can be followed in the [Jupyter Notebook](https://github.com/simonlipson/projects/blob/master/Friends%20NLP.ipynb). To see the visualizations in a nice Jupyter Widget you should open the Notebook in Jupyter yourself. Below will be some of the highlights.
 
