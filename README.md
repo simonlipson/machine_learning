@@ -327,6 +327,24 @@ rnm_create_personality_plot('personality')
 #### Rick and Morty 
 ![](images/rnm_big5.png)
 
+### A few insights
+
+The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. We can see this when we look at aggregated data for each personality trait accross all characters.
+
+IMAGE
+
+As you can see, the standard deviation across all the big 5 traits is quite low. That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
+
+See below the characters with the highest and lowest levels of each trait.
+
+#### Highest
+
+IMAGE
+
+#### Lowest
+
+IMAGE
+
 ### Bonus: Rick and Morty further analysis
 
 Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance, especially in Agreeableness and Emotional Range. When I looked further into the needs of each character, there was a much more observable variance between Rick and Morty than for the characters on the other shows.
