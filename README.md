@@ -351,13 +351,13 @@ See below the characters with the highest and lowest levels of each trait.
 
 ![](images/min.png)
 
-Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City had higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
+Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City have higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
 
-Rachel is the most agreeable character (and hence probably why she is such a fan favourite) and Rick is the least (not surprising due to his lack of caring).
+Rachel is the most agreeable character (probably why she is such a fan favourite) and Rick is the least (not surprising due to his lack of caring).
 
 Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
 
-Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted (although I feel many people would have given this one to Phoebe).
+Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted (although I feel many people could have given this one to Phoebe).
 
 ### Bonus: Rick and Morty further analysis
 
@@ -412,7 +412,7 @@ y_pred = model.predict(X_test)
 
 #### The Rickest Rick
 
-I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. By taking the maximum probability for for each character, the following lines are deemed to be the "rickest rick" and "mortyest morty":
+I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. By taking the maximum probability for each character, the following lines are deemed to be the "rickest rick" and "mortyest morty":
 
 **Rickest Rick**: "When I drop the bomb you know, I want you to have somebody, you know? I want you to have the thing. I'm gonna make it like a new Adam and Eve, and you're gonna be Adam."
 
