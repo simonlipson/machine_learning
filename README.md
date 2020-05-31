@@ -184,9 +184,9 @@ There may also be the ability to engineer features that try and capture player m
 
 ![](https://images.justwatch.com/backdrop/8612355/s1440/friends)
 
-Have you ever done one of those Buzzfeed "Which character are you?" games? Or has anyone ever told you "You're such a Ross". I wanted to unpack that a little bit and try and see if there was a way of indentifying what it _means_ to "be a Ross". And thus the problem:
+Have you ever done one of those Buzzfeed "Which character are you?" games? Or has anyone ever told you "You're such a Ross"? I wanted to unpack that a little bit and try and see if there was a way of indentifying what it _means_ to "be a Ross". And thus the problem:
 
-**Can an algorithm recognise personality characteristic from screenplays?**
+**Can an algorithm recognise personality characteristics from screenplays?**
 
 I'm sure there are many clever and complex ways of going about building my own model that could do this for me. However I don't believe in reinventing the wheel. Instead I decided to use [IBM's Watson](https://www.ibm.com/watson). This is an AI platform that offers many different services, one of which is called Personality Insights and is accessible via [API](https://cloud.ibm.com/apidocs/personality-insights?code=python). 
 
@@ -351,13 +351,13 @@ See below the characters with the highest and lowest levels of each trait.
 
 ![](images/min.png)
 
-Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City have higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
+Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City are in the high percentiles of openness, likely due to how much they are willing to reveal about their love lives. 
 
 Rachel is the most agreeable character (probably why she is such a fan favourite) and Rick is the least (not surprising due to his lack of caring).
 
-Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
+Kramer has the least emotional range which seems to be a good judge of his character (as sliding through a door once or twice an episode doesn't leave a lot of room for depth of character). And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
 
-Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted (although I feel many people could have given this one to Phoebe).
+Surprisingly, Monica is the most conscientious and less surprisingly Samantha is the most extraverted (although I feel many people could have given this one to Phoebe).
 
 ### Bonus: Rick and Morty further analysis
 
@@ -371,7 +371,7 @@ Whilst I was impressed by Watson's ability to deduce personality insights, I fee
 
 We can see that Rick has much more imagination, self-efficacy, assertiveness and immoderation than Morty. Yet Morty is more cautious, cheerful (no-surprise there), sympathetic, prone to worry and susceptable to stress than Rick. Any viewer of the show would agree with these. Although there are others that Watson got wrong, like Morty having a similar level of intellect to Rick or Rick being more trusting than Morty. Regardless, there is clearly an observable difference between these two characters.
 
-As such, it seemed that the difference could lend itself well to prediction. As such I went about training a classifier to see if it could classify a line as being said by Rick or by Morty. So with the same data I used to generate the personality profiles, I went about extracting features, training a model and creating predictions. 
+As such, it seemed that the difference could lend itself well to prediction. So I went about training a classifier to see if it could classify a line as being said by Rick or by Morty. With the same data I used to generate the personality profiles, I went about extracting features, training a model and creating predictions. 
 
 #### TF-IDF Vectorization
 
