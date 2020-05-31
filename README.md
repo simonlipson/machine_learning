@@ -331,7 +331,7 @@ rnm_create_personality_plot('personality')
 
 The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. We can see this when we look at aggregated data for each personality trait accross all characters.
 
-IMAGE
+![](images/agg.png)
 
 As you can see, the standard deviation across all the big 5 traits is quite low. That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
 
@@ -339,15 +339,27 @@ See below the characters with the highest and lowest levels of each trait.
 
 #### Highest
 
-IMAGE
+![](images/max.png)
 
 #### Lowest
 
-IMAGE
+![](images/min.png)
+
+Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City had higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
+
+Rachel is the most agreeable character (and hence probably why she is such a fan favourite) and Rick is the least.
+
+Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
+
+Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted (although I feel many people would have given this one to Phoebe).
 
 ### Bonus: Rick and Morty further analysis
 
-Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance, especially in Agreeableness and Emotional Range. When I looked further into the needs of each character, there was a much more observable variance between Rick and Morty than for the characters on the other shows.
+Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
+
+#### Child traits for each of the big 5
+
+
 
 ![](images/rnm_needs.png)
 
