@@ -3,6 +3,8 @@
 2. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
 2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
+---
+
 # AFL Brownlow Medal Predictor (Regression)
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
@@ -176,6 +178,8 @@ This could involve making several changes in the feature engineering phase. For 
 
 There may also be the ability to engineer features that try and capture player momentum to see if they are on a hot streak. This could help capture a part of the player psychology as well as the umpire psychology. If the "hot" player is constantly being praised in the media, it can have a big impact on their performance and also on how much the umpire is watching them. There are many other features that could be relevant when looking at it on a per-game basis as opposed to a per-season basis. This could be a good avenue for improvement.
 
+---
+
 # Visualizing personalities of sitcom characters (NLP)
 
 ![](https://images.justwatch.com/backdrop/8612355/s1440/friends)
@@ -333,7 +337,7 @@ The characters of the three 90s sitcoms all seem to have similar personalities t
 
 ![](images/agg.png)
 
-As you can see, the standard deviation across all the big 5 traits is quite low. That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
+As you can see, the standard deviation across all the big 5 traits is quite low (except for the Extraversion and Emotional Range that anyway have low averages). That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
 
 See below the characters with the highest and lowest levels of each trait.
 
@@ -347,7 +351,7 @@ See below the characters with the highest and lowest levels of each trait.
 
 Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City had higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
 
-Rachel is the most agreeable character (and hence probably why she is such a fan favourite) and Rick is the least.
+Rachel is the most agreeable character (and hence probably why she is such a fan favourite) and Rick is the least (not surprising due to his lack of caring).
 
 Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
 
@@ -355,7 +359,7 @@ Surprisingly, Monica is the most conscientious. And less surprisingly Samantha i
 
 ### Bonus: Rick and Morty further analysis
 
-Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
+Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters. There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
 
 #### Child traits for each of the big 5
 
@@ -363,15 +367,15 @@ Whilst I was impressed by Watson's ability to deduce personality insights, I fee
 ![](images/child2.png)
 ![](images/child3.png)
 
-With this observable variance between the two characters, it seemed that this is something that could lend itself well to prediction. As such I trained a classifier to see if it could predict who says a specific line. So with the same data I used to generate the personality profiles, I trained a classifier. 
+With the observable variance between the two characters, it seemed that the difference in character could lend itself well to prediction. As such I trained a classifier to see if it could predict who says a specific line from the show. So with the same data I used to generate the personality profiles, I went about extracting features, training a model and creating predictions. 
 
 #### TF-IDF Token Vectorization
 
-I extracted features from each line of dialogue using TfidfVectorizer. This creates a matrix of vectors that became the input for my training sets. The names of the characters was the test set.
+I extracted features from each line of dialogue using TfidfVectorizer. This created a matrix of vectors that became the input for my training sets. The names of the characters was the test set.
 
-I used a LogisticRegression classifier.
+I used a LogisticRegression classifier and split the data 80/20 for training and testing.
 
-The classification report upon prediction is as follows:
+Upon having trained the model and creating predictions, the model was able to achieve the following performance:
 
 ```
               precision    recall  f1-score   support
@@ -383,7 +387,9 @@ The classification report upon prediction is as follows:
    macro avg       0.69      0.58      0.55       154
 weighted avg       0.68      0.65      0.59       154
 ```
-Overall accuracy of 0.65. Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation, tuning for hyperparameters with gridsearch and other NLP feature extraction methods like word-embedding and creating rule-based linguistic features. 
+Overall accuracy of 0.65. 
+
+Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation, tuning for hyperparameters with gridsearch and other NLP feature extraction methods like word-embedding and creating rule-based linguistic features. 
 
 _code snippet_
 ```python
@@ -402,7 +408,7 @@ y_pred = model.predict(X_test)
 
 #### The Rickest Rick
 
-I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. And so by finding the max probability for rick and morty, we get the following:
+I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. By taking the maximum probability for for each character, the following lines are deemed to be the "rickest rick" and "mortyest morty":
 
 **Rickest Rick**: "When I drop the bomb you know, I want you to have somebody, you know? I want you to have the thing. I'm gonna make it like a new Adam and Eve, and you're gonna be Adam."
 
@@ -411,7 +417,9 @@ I was curious to see which lines were given the highest probability of being Ric
 
 ### Conclusion
 
-Whilst I don't believe that IBM's Watson or my classifier will be able to outperform a human at deciphering personality traits anytime soon, I do believe that it was cool to see that machines could process text in a better than random way. I found it very interesting to be able to connect to a service as cool and futuristic as Watson from my own living room and get results within seconds. When services like these get better with time, there will be many awesome possibilities that can be achieved by the top-of-the-line data scientists and the living-room data scientists. 
+Whilst I don't believe that IBM's Watson or my classifier will be able to outperform a human at deciphering personality traits anytime soon, I do believe that it was cool to see that machines could process text in a better than random way. I found it very interesting to be able to connect to a service as cool and futuristic as Watson from my own living room and get results within seconds. When services like these get better with time, there will be many awesome possibilities that can be achieved by data scientists with fewer resources than large organizations. I plan to take full advantage of all of these opportunities. 
+
+---
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
