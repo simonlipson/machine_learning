@@ -351,11 +351,15 @@ Rachel is the most agreeable character (and hence probably why she is such a fan
 
 Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
 
-Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted.
+Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted (although I feel many people would have given this one to Phoebe).
 
 ### Bonus: Rick and Morty further analysis
 
-Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance, especially in Agreeableness and Emotional Range. When I looked further into the needs of each character, there was a much more observable variance between Rick and Morty than for the characters on the other shows.
+Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
+
+#### Child traits for each of the big 5
+
+
 
 ![](images/rnm_needs.png)
 
