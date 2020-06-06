@@ -3,6 +3,8 @@
 2. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
 2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
+---
+
 # AFL Brownlow Medal Predictor (Regression)
 ![](https://cdn4.theroar.com.au/wp-content/uploads/2012/09/Brownlow-Medal-415x285.jpg)
 
@@ -176,13 +178,15 @@ This could involve making several changes in the feature engineering phase. For 
 
 There may also be the ability to engineer features that try and capture player momentum to see if they are on a hot streak. This could help capture a part of the player psychology as well as the umpire psychology. If the "hot" player is constantly being praised in the media, it can have a big impact on their performance and also on how much the umpire is watching them. There are many other features that could be relevant when looking at it on a per-game basis as opposed to a per-season basis. This could be a good avenue for improvement.
 
+---
+
 # Visualizing personalities of sitcom characters (NLP)
 
 ![](https://images.justwatch.com/backdrop/8612355/s1440/friends)
 
-Have you ever done one of those Buzzfeed "Which character are you?" games? Or has anyone ever told you "You're such a Ross". I wanted to unpack that a little bit and try and see if there was a way of indentifying what it _means_ to "be a Ross". And thus the problem:
+Have you ever done one of those Buzzfeed "Which character are you?" games? Or has anyone ever told you "You're such a Ross"? I wanted to unpack that a little bit and try and see if there was a way of indentifying what it _means_ to "be a Ross". And thus the problem:
 
-**Can an algorithm recognise personality characteristic from screenplays?**
+**Can an algorithm recognise personality characteristics from screenplays?**
 
 I'm sure there are many clever and complex ways of going about building my own model that could do this for me. However I don't believe in reinventing the wheel. Instead I decided to use [IBM's Watson](https://www.ibm.com/watson). This is an AI platform that offers many different services, one of which is called Personality Insights and is accessible via [API](https://cloud.ibm.com/apidocs/personality-insights?code=python). 
 
@@ -192,7 +196,7 @@ I'm sure there are many clever and complex ways of going about building my own m
 2. Preprocess that data 
 3. Call Watson API for Personality Insights
 4. Visualize those insights
-5. BONUS: Rick or Morty predictor Algorithm
+5. BONUS: predicting the Rickest Rick and Mortyest Morty
 
 The whole process can be followed in the [Jupyter Notebook](https://github.com/simonlipson/projects/blob/master/Friends%20NLP.ipynb). To see the visualizations in a nice Jupyter Widget you should open the Notebook in Jupyter yourself. Below will be some of the highlights.
 
@@ -273,9 +277,9 @@ for friend in friends:
 ```
 ### Visualizing the personalities with matplotlib
 
-For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the needs of the person being analysed. These are what I focused on for the visualization. 
+For each of the four shows I created functions that plots each personality trait's percentile for each character. Watson's insights have several levels. The main one is what they call the big5. They also have insights into the children of each of those traits. These are what I focused on for the visualization. 
 
-Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see below screenshots of some of the plots.
+Jupyter Notebooks allowed my to use Tab widgets to allow you to easily view all plots. I suggest downloading and opening the notebook yourself to see the plots in the widget. However see screenshots of the plots below.
 
 _code snippet for Rick and Morty visualiztion_
 ```python
@@ -329,11 +333,13 @@ rnm_create_personality_plot('personality')
 
 ### A few insights
 
-The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. We can see this when we look at aggregated data for each personality trait accross all characters.
+The characters of the three 90s sitcoms all seem to have similar personalities to the other characters on their shows. This could be explained by several reason, of which could be that they are all written by the same writers, that they are all intended for the same audience, or that Watson just isn't as insightful as we'd hope. Or maybe Watson is less suited to screenplays and better suited to tweets, Yelp reviews or presidential debates. 
+
+Below are some descriptive statistics of the percentiles for the big5 for all of the characters.
 
 ![](images/agg.png)
 
-As you can see, the standard deviation across all the big 5 traits is quite low. That tells me that there wasn't a lot of variance in the percentiles across all the characters. We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness).
+We could see in the graphs that all characters (except for Rick) had very high levels of Agreeableness and very low levels of Emotional Range. This is also observable when we look at the mean value for these traits in the descriptive statistics above. I don't think its too surprising either, given that these are all characters that audiences need to love (hence the high agreeableness). The emotional range can possibly be explained by the fact that the shows all have less than 30 minute episodes and are all comedies. There isn't enough time or need to develop complex and broad storylines that portray all of the ups and downs of each character that reflect the everyday of ordinary people. Rather, we want to see Joey be loveable, Samantha be raunchy, George be paranoid and Rick be cynical. 
 
 See below the characters with the highest and lowest levels of each trait.
 
@@ -345,35 +351,35 @@ See below the characters with the highest and lowest levels of each trait.
 
 ![](images/min.png)
 
-Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City had higher openness than all the other shows, likely due to how much they are willing to reveal about their love lives. 
+Above we see that Carrie from Sex and the City is at the same time the most open and the least conscientious. Actually all characters from Sex and the City are in the high percentiles of openness, likely due to how much they are willing to reveal about their love lives. 
 
-Rachel is the most agreeable character (and hence probably why she is such a fan favourite) and Rick is the least.
+Rachel is the most agreeable character (probably why she is such a fan favourite) and Rick is the least (not surprising due to his lack of caring).
 
-Kramer has the least emotional range which seems to be a good judge of his character. And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
+Kramer has the least emotional range which seems to be a good judge of his character (as sliding through a door once or twice an episode doesn't leave a lot of room for depth of character). And Morty is the least extraverted (which isn't doing him too many favours with Jessica).
 
-Surprisingly, Monica is the most conscientious. And less surprisingly Samantha is the most extraverted (although I feel many people would have given this one to Phoebe).
+Surprisingly, Monica is the most conscientious and less surprisingly Samantha is the most extraverted (although I feel many people could have given this one to Phoebe).
 
 ### Bonus: Rick and Morty further analysis
 
-Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the three 90s sitcoms have very similar characters (according to Watson). There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
+Whilst I was impressed by Watson's ability to deduce personality insights, I feel it is still far behind the average viewers' ability to do so. As observable above, the characters in each of the 90s sitcoms are very similar to their co-characters. There wasn't a great deal of variance in their percentiles of the big 5 traits. Rick and Morty did show a bit more variance. When I looked further into Watson's output for Rick and Morty, there was a much more observable variance between them than for the characters on the other shows.
 
 #### Child traits for each of the big 5
 
+![](images/child1.png)
+![](images/child2.png)
+![](images/child3.png)
 
+We can see that Rick has much more imagination, self-efficacy, assertiveness and immoderation than Morty. Yet Morty is more cautious, cheerful (no-surprise there), sympathetic, prone to worry and susceptable to stress than Rick. Any viewer of the show would agree with these. Although there are others that Watson got wrong, like Morty having a similar level of intellect to Rick or Rick being more trusting than Morty. Regardless, there is clearly an observable difference between these two characters.
 
-![](images/rnm_needs.png)
+As such, it seemed that the difference could lend itself well to prediction. So I went about training a classifier to see if it could classify a line as being said by Rick or by Morty. With the same data I used to generate the personality profiles, I went about extracting features, training a model and creating predictions. 
 
-The needs graphs for the other sitcoms can be seen in the notebook.
+#### TF-IDF Vectorization
 
-With this observable variance between the two characters, I wanted to try and train a classifier to see if it could predict who says a specific line. So with the same data I used to generate the personality profiles, I trained a classifier. 
+I extracted features from each line of dialogue using TfidfVectorizer. This created a matrix of vectors that became the input for my training sets. The names of the characters was the test set.
 
-#### TF-IDF Token Vectorization
+I used a LogisticRegression classifier and split the data 80/20 for training and testing.
 
-I extracted features from each line of dialogue using TfidfVectorizer. This creates a matrix of vectors that became the input for my training sets. The names of the characters was the test set.
-
-I used a LogisticRegression classifier.
-
-The classification report upon prediction is as follows:
+Upon having trained the model and created predictions, the model was able to achieve the following performance:
 
 ```
               precision    recall  f1-score   support
@@ -385,7 +391,9 @@ The classification report upon prediction is as follows:
    macro avg       0.69      0.58      0.55       154
 weighted avg       0.68      0.65      0.59       154
 ```
-Overall accuracy of 0.65. Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation and tuning for hyperparameters with gridsearch. 
+Overall accuracy of 0.65. 
+
+Not amazing but its better than random choice. There is a lot more optimization that can be done to help improve this score. For example testing other models with k-fold cross-validation, tuning for hyperparameters with gridsearch and other NLP feature extraction methods like word-embedding and creating rule-based linguistic features. 
 
 _code snippet_
 ```python
@@ -404,7 +412,7 @@ y_pred = model.predict(X_test)
 
 #### The Rickest Rick
 
-I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. And so by finding the max probability for rick and morty, we get the following:
+I was curious to see which lines were given the highest probability of being Rick and Morty. So I also output the probabilities with `model.predict_proba` and joined it back to my original data frame. By taking the maximum probability for each character, the following lines are deemed to be the "rickest rick" and "mortyest morty":
 
 **Rickest Rick**: "When I drop the bomb you know, I want you to have somebody, you know? I want you to have the thing. I'm gonna make it like a new Adam and Eve, and you're gonna be Adam."
 
@@ -413,7 +421,9 @@ I was curious to see which lines were given the highest probability of being Ric
 
 ### Conclusion
 
+Whilst I don't believe that IBM's Watson or my classifier will be able to outperform a human at deciphering personality traits anytime soon, I do believe that it was cool to see that machines could process text in a better than random way. I found it very interesting to be able to connect to a service as cool and futuristic as Watson from my own living room and get results within seconds. When services like these get better with time, there will be many awesome possibilities that can be achieved by data scientists with fewer resources than those working in large organizations. I plan to take full advantage of all of those opportunities. 
 
+---
 
 # AFL Game Win Loss and Margin Predictor (Classification and Regression)
 ![](https://www.blueseum.org/show_image.php?id=28865&scalesize=0&nocount=y)
