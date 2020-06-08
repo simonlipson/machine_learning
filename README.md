@@ -1,7 +1,8 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
-2. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
-2. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
+2. [Using AI to solve Rick and Morty's greatest mystery](#using-ai-to-solve-rick-and-mortys-greatest-mystery)
+3. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
+4. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
 ---
 
@@ -177,6 +178,15 @@ The achieved results do show some promise, however there is definitely still roo
 This could involve making several changes in the feature engineering phase. For example, my model looks at data aggregated per season. As such, it doesn't take into account who was the best player per game. Therefore there are many game-day relevant insights that might be missed by the algorithm. For example, if it was a low scoring game, the highest goal kicker wouldn't have have kicked many goals but still might be the best player. That could be true about almost all of the used data points. 
 
 There may also be the ability to engineer features that try and capture player momentum to see if they are on a hot streak. This could help capture a part of the player psychology as well as the umpire psychology. If the "hot" player is constantly being praised in the media, it can have a big impact on their performance and also on how much the umpire is watching them. There are many other features that could be relevant when looking at it on a per-game basis as opposed to a per-season basis. This could be a good avenue for improvement.
+
+---
+
+# Using AI to solve Rick and Morty's greatest mystery
+
+See project writeup and summary on [Medium here](https://medium.com/@simon.lipson/using-ai-to-determine-which-beth-is-the-clone-232d53d946ff)
+
+Link to the [code is here](https://github.com/simonlipson/projects/blob/master/Rick%20and%20Morty%20which%20Beth%20is%20the%20real%3F.ipynb)
+
 
 ---
 
