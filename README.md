@@ -1,6 +1,6 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
-2. [Using AI to solve Rick and Morty's greatest mystery (NLP](#using-ai-to-solve-rick-and-mortys-greatest-mystery)
+2. [Using AI to solve Rick and Morty's greatest mystery (NLP)](#using-ai-to-solve-rick-and-mortys-greatest-mystery)
 3. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
 4. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
