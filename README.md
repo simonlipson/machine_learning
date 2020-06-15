@@ -1,6 +1,6 @@
 ## Project Index
 1. [AFL Brownlow Medal Predictor (Regression)](#afl-brownlow-medal-predictor-regression)
-2. [Using AI to solve Rick and Morty's greatest mystery](#using-ai-to-solve-rick-and-mortys-greatest-mystery)
+2. [Using AI to solve Rick and Morty's greatest mystery (NLP](#using-ai-to-solve-rick-and-mortys-greatest-mystery)
 3. [Visualizing personalities of sitcom characters (NLP)](#visualizing-personalities-of-sitcom-characters-nlp)
 4. [AFL Game Win Loss and Margin Predictor (Classification and Regression)](#afl-game-win-loss-and-margin-predictor-classification-and-regression)
 
@@ -182,6 +182,8 @@ There may also be the ability to engineer features that try and capture player m
 ---
 
 # Using AI to solve Rick and Morty's greatest mystery
+
+![](https://static1.srcdn.com/wordpress/wp-content/uploads/2020/06/Rick-and-Morty-Clone-Beth-Froopyland.jpg)
 
 See project writeup and summary on [Medium here](https://medium.com/@simon.lipson/using-ai-to-determine-which-beth-is-the-clone-232d53d946ff)
 
